@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR usr/react
+
+COPY package.json .
+RUN  npm install
+
+COPY . . 
+# we can leave thet line , becouse it alreday handeled in dcoker-compose file
+
+CMD ["npm", "run","start"]
